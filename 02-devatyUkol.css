@@ -1,0 +1,28 @@
+
+.body {
+    background-color: burlywood;
+    transition: all 3s;
+}
+
+.nadpis {
+    position: absolute; 
+    top: 320px;         
+    left: 700px;        
+
+}
+
+
+
+
+
+.tlacitko1 {
+    position: absolute;
+    top: 550px;
+    left: 600px;
+}
+
+.tlacitko2 {
+    position: absolute;
+    top: 550px;
+    left: 1200px;
+}
