@@ -1,12 +1,12 @@
 let elmStart = document.querySelector(".tlacitko1");
-let BodyBackground = document.querySelector(".body");
+let bodyBackground = document.querySelector(".body");
 
 let aktivaceRGB;
-
+let promena = true // přidal jsem boolean abych zajistil zastavení cyklů po stisknutí startu
 elmStart.addEventListener("click", (e) => {
    /* BodyBackGround.style.backgroundColor = "red" */ // to jsem si zakomentoval když jsem zkoušel jak vubec změnit barvu stisknutím :D 
     
-        
+    if (promena) {     
         
         
         aktivaceRGB = setInterval( ()  => {
@@ -15,14 +15,16 @@ elmStart.addEventListener("click", (e) => {
         let cervena = Math.floor(Math.random() * 256);
         let zelena = Math.floor(Math.random() * 256);
     
-        BodyBackground.style.backgroundColor = "rgb(" + modra + ", " + cervena + ", " + zelena + ") "
+        bodyBackground.style.backgroundColor = "rgb(" + modra + ", " + cervena + ", " + zelena + ") "
        // console.log(Math.floor(Math.random() * 256));
     }, 3000)  
+        promena = false
+          }
   
   
     } ) ;  
 
-
+    
 let elmKonec = document.querySelector(".tlacitko2");
 
 elmKonec.addEventListener( "click", (e) => {
@@ -30,6 +32,7 @@ elmKonec.addEventListener( "click", (e) => {
     if (aktivaceRGB) {
         clearInterval(aktivaceRGB);
         aktivaceRGB = null; // resetuju timhle tu proměnnou a mělo by se to vypnout, nejspíš i pak zase zapnout startem...
+        promena = true
     }
     
     
@@ -37,6 +40,8 @@ elmKonec.addEventListener( "click", (e) => {
 
 
 });
+    
+    
     
     
    
